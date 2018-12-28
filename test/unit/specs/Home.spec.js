@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import App from '../../../src/App'
+import Home from '@/components/Home'
 
-describe('App.vue', () => {
+describe('Home.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(App)
+    const Constructor = Vue.extend(Home)
     const vm = new Constructor().$mount()
     expect(vm !== null)
   })
