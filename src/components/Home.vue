@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Look through the window...
+      {{ $t('Look through the window') }}...
     </h1>
   </div>
 </template>
