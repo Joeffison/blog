@@ -2,6 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Blog from '@/components/blog/Blog'
+import BlogPost from '@/components/blog/BlogPost'
+import BlogPostCard from '@/components/blog/BlogPostCard'
 
 import './config/analytics'
 import { i18n } from './config/i18n'
@@ -17,7 +20,7 @@ new Vue({
   el: '#app',
   router,
   i18n,
-  components: { App },
+  components: { App, Blog, BlogPost, BlogPostCard },
   template: '<App/>',
   render: h => h(App)
 }).$mount('#app')

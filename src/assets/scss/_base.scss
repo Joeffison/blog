@@ -1,0 +1,25 @@
+.app-logo {
+  @include highlighted-round-image;
+
+  width: 13rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.app-container {
+  width: 80vw;
+  max-width: 80vw;
+  margin: 0 auto 1rem auto;
+
+  img {
+    max-width: 100%;
+  }
+}

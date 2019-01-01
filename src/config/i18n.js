@@ -18,6 +18,8 @@ const i18nextInstance = i18next.init({
 })
 export const i18n = new VueI18Next(i18nextInstance)
 
+export const getLanguage = () => i18next.language
+
 export const changeLanguage = lang => {
   i18next.changeLanguage(lang)
 }
