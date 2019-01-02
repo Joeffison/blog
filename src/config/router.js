@@ -10,6 +10,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: '/en/'
+    },
+    {
       path: '/:lang',
       component: {
         template: '<router-view></router-view>'
@@ -27,7 +31,7 @@ export default new Router({
           component: Blog
         },
         {
-          path: 'home',
+          path: '',
           name: 'Home',
           component: Home
         }
