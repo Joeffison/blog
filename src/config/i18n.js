@@ -16,7 +16,10 @@ const i18nextInstance = i18next.init({
   fallbackLng: 'en',
   resources: resBundle
 })
+
 export const i18n = new VueI18Next(i18nextInstance)
+
+export const availableLanguages = ['en', 'pt', 'de']
 
 export const getLanguage = () => i18next.language
 

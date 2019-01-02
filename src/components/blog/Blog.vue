@@ -1,6 +1,6 @@
 <template>
   <div id="blog-home" class="">
-    <h1>{{ pageTitle }}</h1>
+    <h1>{{ $t('Joey\'s Blog') }}</h1>
     <div class="row">
       <div v-for="(post, index) in posts"
         :key="post.slug + '_' + index"
@@ -21,7 +21,6 @@ export default {
   components: { BlogPostCard },
   data () {
     return {
-      pageTitle: 'Joey\'s Blog',
       posts: []
     }
   },

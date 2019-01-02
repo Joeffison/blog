@@ -6,14 +6,14 @@
 
     <router-link
       v-if="post.meta.previous_post"
-      :to="getPostLink(post.meta.previous_post.slug)"
+      :to="{ params: {slug: post.meta.previous_post.slug} }"
       class="btn btn-primary"
     >
       Previous: {{ post.meta.previous_post.title }}
     </router-link>
     <router-link
       v-if="post.meta.next_post"
-      :to="getPostLink(post.meta.next_post.slug)"
+      :to="{ params: {slug: post.meta.next_post.slug} }"
       class="btn btn-secondary"
     >
       Next: {{ post.meta.next_post.title }}
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { getLanguage } from '@/config/i18n'
 import { blogPostService } from '@/api/posts'
 
 export default {
@@ -33,9 +32,6 @@ export default {
     }
   },
   methods: {
-    getPostLink (slug) {
-      return '/' + getLanguage() + '/blog/' + slug
-    },
     getPost () {
       function pageNotFoundSerializer (err) {
         return {

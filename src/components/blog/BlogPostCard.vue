@@ -1,6 +1,6 @@
 <template>
   <router-link
-    :to="'./' + post.slug"
+    :to="{ name: 'blog-post', params: { slug: post.slug } }"
     id="blog-post-card"
   >
     <article class="card blog-post-list">

@@ -7,6 +7,13 @@ import { changeLanguage } from './i18n'
 
 Vue.use(Router)
 
+export function updateLanguageFromRoute (to, from, next) {
+  if (to.params.lang) {
+    changeLanguage(to.params.lang)
+  }
+  next()
+}
+
 export default new Router({
   routes: [
     {
@@ -18,35 +25,25 @@ export default new Router({
       component: {
         template: '<router-view></router-view>'
       },
-      beforeEnter (to, from, next) {
-        if (to.params.lang) {
-          changeLanguage(to.params.lang)
-        }
-        next()
-      },
+      beforeEnter: updateLanguageFromRoute,
       children: [
         {
           path: 'blog',
-          name: 'Blog',
+          name: 'blog',
           component: Blog
         },
         {
           path: '',
-          name: 'Home',
+          name: 'home',
           component: Home
         }
       ]
     },
     {
       path: '/:lang/blog/:slug',
-      name: 'BlogPost',
+      name: 'blog-post',
       component: BlogPost,
-      beforeEnter (to, from, next) {
-        if (to.params.lang) {
-          changeLanguage(to.params.lang)
-        }
-        next()
-      }
+      beforeEnter: updateLanguageFromRoute
     }
   ]
 })

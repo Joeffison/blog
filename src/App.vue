@@ -1,13 +1,35 @@
 <template>
   <div id="app">
-    <img class="app-logo" src="static/images/icons/favicon.png">
-    <router-view/>
+    <app-nav-bar></app-nav-bar>
+    <div class="app-container">
+      <img class="app-logo" src="static/images/icons/favicon.png">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import { changeLanguage } from '@/config/i18n'
+import AppNavBar from './components/Navbar'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: { AppNavBar },
+  methods: {
+    onRouting () {
+      if (this.$route.params.lang) {
+        changeLanguage(this.$route.params.lang)
+      }
+    }
+  },
+  created () {
+    this.onRouting()
+  },
+  watch: {
+    $route (to, from) {
+      this.onRouting()
+    }
+  }
 }
 </script>
 
@@ -20,6 +42,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 import router from './router'
 
-const isLiveServer = process.env.NODE_END === 'production'
+const isLiveServer = process.env.NODE_ENV === 'production'
 
 const analytics = {
   id: 'UA-76609720-3',
@@ -11,7 +11,7 @@ const analytics = {
     exception: true
   },
   debug: {
-    enabled: !isLiveServer,
+    enabled: false,
     sendHitTask: isLiveServer
   }
 }
