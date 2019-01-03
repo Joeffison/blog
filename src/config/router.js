@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Blog from '@/components/blog/Blog'
 import BlogPost from '@/components/blog/BlogPost'
 import Home from '@/components/Home'
+import Bio from '@/components/Bio'
 import { changeLanguage } from './i18n'
 
 Vue.use(Router)
@@ -36,6 +37,11 @@ export default new Router({
           path: '',
           name: 'home',
           component: Home
+        },
+        {
+          path: 'bio',
+          name: 'bio',
+          component: Bio
         }
       ]
     },

@@ -1,0 +1,116 @@
+@import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
+@import 'https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise';
+
+/* Yellow Hex Color */
+$classic-post-it-primary: #ffff88;
+$classic-post-it-primary-2: #ffffc6;
+$classic-post-it-primary-3: #fdfd86;
+
+$classic-post-it-secondary: #ff88ff;
+$classic-post-it-secondary-2: #ffc6ff;
+$classic-post-it-secondary-3: #fd86fd;
+
+$classic-post-it-tertiary: #88ffff;
+$classic-post-it-tertiary-2: #c6ffff;
+$classic-post-it-tertiary-3: #86fdfd;
+
+@mixin post-it-paper-colors($color1: $classic-post-it-primary,
+                            $color2: $classic-post-it-primary-2,
+                            $color3: $classic-post-it-primary-3) {
+
+  background: $color1;
+  @include prefix((
+    linear-gradient(-45deg, $color1 81%, $color1 82%, $color1 82%, $color2 100%)
+  ), ('moz', 'webkit', 'o', 'ms')); /* FF3.6+, (Chrome10+, Safari5.1+), Opera 11.10+, IE10+ */
+
+  background: -webkit-gradient(linear, left top, right bottom,
+                               color-stop(81%, $color1),
+                               color-stop(82%, $color1),
+                               color-stop(82%, $color1),
+                               color-stop(100%, $color2)); /* Chrome, Safari4+ */
+  background: linear-gradient(135deg, $color1 81%, $color1 82%, $color1 82%, $color2 100%); // W3C
+
+  /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1',
+                                                     endColorstr='$color2',
+                                                     GradientType=1);
+
+  /* Post-its have that sticky glue-like substance on top that, when in use,
+   has a slightly different look than the rest of the Post-it */
+  border: 1px solid #E8E8E8;
+  border-top: 60px solid $color3;
+}
+
+.post-it-paper { // Credits: based on suggestions on mentormate.com
+  font-family: 'Reenie Beanie', 'Waiting for the Sunrise', 'Marker Felt', 'Comic Sans', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+
+  /* Sizing */
+  margin: 8px;
+  width: 275px; /* set width to 275px or 250px */
+  min-height: 250px; /* set height to 245px or 250px */
+  max-height: 250px;
+  padding-top: 0px; /* example: set padding-top to 35px to center two lines */
+
+  @include post-it-paper-colors;
+
+  &.post-it-paper-primary {
+    @include post-it-paper-colors($classic-post-it-primary,
+                                  $classic-post-it-primary-2,
+                                  $classic-post-it-primary-3);
+  }
+
+  &.post-it-paper-secondary {
+    @include post-it-paper-colors($classic-post-it-secondary,
+                                  $classic-post-it-secondary-2,
+                                  $classic-post-it-secondary-3);
+
+    p:nth-of-type(2) {
+      color: inherit;
+    }
+  }
+
+  &.post-it-paper-tertiary {
+    @include post-it-paper-colors($classic-post-it-tertiary,
+                                  $classic-post-it-tertiary-2,
+                                  $classic-post-it-tertiary-3);
+  }
+
+  /* Peeled Corner: the bottom corners tend to peel off the surface a bit when stuck to something.
+  This 3D effect is subtle, but adds a ton to the feel of the note. Not IE compatible */
+  border-bottom-right-radius: 60px 5px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -0px;
+    bottom: 20px;
+    width: 200px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.40);
+    @include prefix((
+      transform: matrix(-1, -0.1, 0, 1, 0, 0)
+    ));
+  }
+
+  p {
+    position: absolute;
+
+    &:not(:only-of-type) {
+    }
+
+    &:nth-of-type(2) {
+      font-size: 1.2rem;
+      color: red;
+      bottom: 0;
+      right: 30px;
+    }
+  }
+
+}

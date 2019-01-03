@@ -5,20 +5,14 @@
   >
     <article class="card blog-post-list">
       <div class="row no-gutters">
-        <div class="col">
-          <img v-if="post.featured_image"
-               :src="post.featured_image"
-               alt=""
-          >
-          <img v-else
-               src="http://via.placeholder.com/250x250"
-               alt=""
-          >
+        <div class="col" v-if="post.featured_image">
+          <img :src="post.featured_image" alt="">
         </div>
         <div class="col">
           <div class="card-block px-2">
             <h4 class="card-title">{{ post.title }}</h4>
             <p class="card-text">{{ post.summary }}</p>
+            <button class="btn btn-primary">Read More</button>
           </div>
         </div>
       </div>
