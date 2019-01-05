@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Blog from '@/components/blog/Blog'
-import BlogPost from '@/components/blog/BlogPost'
 import Home from '@/components/Home'
 import Bio from '@/components/Bio'
+import Blog from '@/components/blog/Blog'
+import BlogPost from '@/components/blog/BlogPost'
+import TechStack from '@/components/TechStack'
+
 import { changeLanguage } from './i18n'
 
 Vue.use(Router)
@@ -42,6 +44,11 @@ export default new Router({
           path: 'bio',
           name: 'bio',
           component: Bio
+        },
+        {
+          path: 'tech-stack',
+          name: 'tech-stack',
+          component: TechStack
         }
       ]
     },

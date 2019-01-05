@@ -5,6 +5,7 @@ import App from './App'
 import Blog from '@/components/blog/Blog'
 import BlogPost from '@/components/blog/BlogPost'
 import BlogPostCard from '@/components/blog/BlogPostCard'
+import TechStack from '@/components/TechStack'
 
 import './config/analytics'
 import { i18n } from './config/i18n'
@@ -20,7 +21,13 @@ new Vue({
   el: '#app',
   router,
   i18n,
-  components: { App, Blog, BlogPost, BlogPostCard },
+  components: {
+    App,
+    Blog,
+    BlogPost,
+    BlogPostCard,
+    TechStack
+  },
   template: '<App/>',
   render: h => h(App)
 }).$mount('#app')

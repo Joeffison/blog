@@ -6,9 +6,14 @@
 //$h4-font-size: 18px;
 //$primary: #1abc9c;
 //$secondary: #77878e;
+$tertiary: #e91e63;
 //$dark: #666;
 $headings-font-family: 'Avenir', Helvetica, Arial, sans-serif;
 
 label {
   cursor: pointer;
+}
+
+.text-tertiary {
+  color: $tertiary;
 }
