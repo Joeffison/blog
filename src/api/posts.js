@@ -57,14 +57,21 @@ function getBlogPostCollection () {
   return posts
 }
 
-export const blogPostService = {
-  get: function (slug) {
+function getFromFirebase (slug) {
+  if (slug) {
     return findOne(getBlogPostCollection(), ['data', 'slug'], '==', slug)
-  },
-  list: function (page = 1, page_size = 10) {
-    return butter.post.list({
-      page: page,
-      page_size: page_size
-    }).then(defaultSerializer)
+      .catch(() => { return findOne(posts, ['data', 'slug'], '==', slug) })
   }
+}
+
+function listFromButter (page = 1, page_size = 10) {
+  return butter.post.list({
+    page: page,
+    page_size: page_size
+  }).then(defaultSerializer)
+}
+
+export const blogPostService = {
+  get: getFromFirebase,
+  list: listFromButter
 }

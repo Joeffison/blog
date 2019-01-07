@@ -9,14 +9,14 @@
       :to="{ params: {slug: post.meta.previous_post.slug} }"
       class="btn btn-primary"
     >
-      Previous: {{ post.meta.previous_post.title }}
+      {{ $t('Previous') }}: {{ post.meta.previous_post.title }}
     </router-link>
     <router-link
       v-if="post.meta.next_post"
       :to="{ params: {slug: post.meta.next_post.slug} }"
       class="btn btn-secondary"
     >
-      Next: {{ post.meta.next_post.title }}
+      {{ $t('Next') }}: {{ post.meta.next_post.title }}
     </router-link>
   </div>
 </template>
