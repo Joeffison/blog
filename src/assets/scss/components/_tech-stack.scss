@@ -1,7 +1,12 @@
-.dev-icons i {
-  font-size: 3rem;
+.dev-icons {
+  list-style: none;
 
-  &:hover {
-    color: $tertiary;
+  i {
+    font-size: 3rem;
+    vertical-align: middle !important;
+
+    &:hover {
+      color: $tertiary;
+    }
   }
 }
