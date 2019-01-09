@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Bio from '@/components/Bio'
 import Blog from '@/components/blog/Blog'
 import BlogPost from '@/components/blog/BlogPost'
+import Library from '@/components/Library'
 import TechStack from '@/components/TechStack'
 
 import { changeLanguage } from './i18n'
@@ -44,6 +45,11 @@ export default new Router({
           path: 'bio',
           name: 'bio',
           component: Bio
+        },
+        {
+          path: 'library',
+          name: 'library',
+          component: Library
         },
         {
           path: 'tech-stack',

@@ -5,6 +5,7 @@ import App from './App'
 import Blog from '@/components/blog/Blog'
 import BlogPost from '@/components/blog/BlogPost'
 import BlogPostCard from '@/components/blog/BlogPostCard'
+import Library from '@/components/Library'
 import TechStack from '@/components/TechStack'
 
 import './config/analytics'
@@ -26,6 +27,7 @@ new Vue({
     Blog,
     BlogPost,
     BlogPostCard,
+    Library,
     TechStack
   },
   template: '<App/>',
