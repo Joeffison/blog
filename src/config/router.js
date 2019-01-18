@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Bio from '@/components/Bio'
-import Blog from '@/components/blog/Blog'
-import BlogPost from '@/components/blog/BlogPost'
-import Library from '@/components/Library'
-import TechStack from '@/components/TechStack'
+
+import Home from '@/views/Home'
+import Blog from '@/views/Blog'
+import BlogPost from '@/views/BlogPost'
+import Library from '@/views/Library'
+import TechStack from '@/views/TechStack'
 
 import { changeLanguage } from './i18n'
 
@@ -40,11 +40,6 @@ export default new Router({
           path: '',
           name: 'home',
           component: Home
-        },
-        {
-          path: 'bio',
-          name: 'bio',
-          component: Bio
         },
         {
           path: 'library',

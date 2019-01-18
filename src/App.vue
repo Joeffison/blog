@@ -1,16 +1,13 @@
 <template>
   <div id="app">
     <app-nav-bar></app-nav-bar>
-    <div class="app-container">
-      <img class="app-logo" src="static/images/icons/favicon.png">
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import { changeLanguage } from '@/config/i18n'
-import AppNavBar from './components/Navbar'
+import AppNavBar from '@/components/Navbar'
 
 export default {
   name: 'App',

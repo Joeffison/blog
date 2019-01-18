@@ -14,7 +14,7 @@ body {
   margin: 0;
 }
 
-.app-container {
+.app-content-container {
   width: 80vw;
   max-width: 80vw;
   margin: 60px auto 1rem auto;
@@ -26,4 +26,10 @@ body {
 
 li {
   list-style: none;
+}
+
+.app-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 4em;
+  color: darken($primary, 10);
 }

@@ -5,6 +5,13 @@ import VueI18Next from '@panter/vue-i18next'
 // load translation files
 /* eslint-disable import/no-webpack-loader-syntax */
 const resBundle = require('i18next-resource-store-loader?include=\\.json$!../../locales/index.js')
+for (let lang in resBundle) {
+  for (let view in resBundle[lang]) {
+    if (view !== 'translation') {
+      resBundle[lang]['translation'] = {...resBundle[lang]['translation'], ...resBundle[lang][view]}
+    }
+  }
+}
 
 Vue.use(VueI18Next)
 
