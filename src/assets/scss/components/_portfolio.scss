@@ -1,0 +1,24 @@
+.portfolio-tab-item.active,
+.portfolio-tab-item:hover {
+  border-right: 5px solid transparent !important;
+  border-right-color: $primary !important;
+  background: #fff !important;
+  color: $primary !important;
+  //color: darken($primary, 10) !important;
+  z-index: 1;
+}
+
+.portfolio-li.active,
+.portfolio-li:hover {
+  box-shadow: 0 0 15px 0 hsla(0, 0%, 50.6%, .82) !important;
+  z-index: 1;
+}
+
+.portfolio-tab-item {
+  transition: background-color .2s, border-color .2s, box-shadow .2s;
+  border-right: 5px solid transparent;
+  background: #fff !important;
+  color: $primary !important;
+  //color: darken($primary, 10);
+}
+

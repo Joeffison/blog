@@ -34,24 +34,24 @@ export default {
   background-color: black;
   color: white;
   text-decoration: none;
-  padding: 4px 6px;
+  padding: 2px 3px;
   font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
-  font-size: 12px;
+  font-size: 0.5em;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1;
   display: inline-block;
   border-radius: 3px;
 
   span {
     display: inline-block;
-    padding: 2px 3px;
+    padding: 1px 1.5px;
 
     svg {
-      height: 12px;
+      height: 1em;
       width: auto;
       position: relative;
       vertical-align: middle;
-      top: -2px;
+      top: -1px;
       fill: white;
     }
   }

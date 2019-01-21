@@ -37,11 +37,6 @@
         </div>
       </section>
     </article>
-    <div class="page-separator row">
-      <div class="col-sm-4" style="margin-top:25px;margin-bottom:25px;"></div>
-      <p style="vertical-align: middle; position: center" class="col-sm-4">Enjoy!</p>
-      <div class="col-sm-4" style="margin-top:25px;margin-bottom:25px;"></div>
-    </div>
   </div>
 </template>
 
@@ -72,29 +67,6 @@ export default {
 
   .card {
     height: 100%;
-  }
-}
-
-.page-separator {
-  background-color: #a0ce4e;
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-
-  div {
-    border-color: rgba(255, 255, 255, 0.5);
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    height: 6px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-  }
-  p {
-    font-size: 38px;
-    font-family: 'Sail', cursive;
-    padding: 0 0 !important;
-    margin: 0 0 !important;
   }
 }
 </style>

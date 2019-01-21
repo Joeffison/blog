@@ -1,0 +1,7 @@
+{
+  "#portfolio-this-website": "This website was created with VueJs and Bootstrap 4. For a full list of the technologies I used here, visit the TechStack page.",
+  "#portfolio-coding-challenges": "I have my most recent coding challenges solutions (mostly in C or Python) in my <a href='https://github.com/Joeffison/coding_challenges#coding-challenges' target='__blank'>Github repository<a/>.",
+  "#portfolio-ml-builder": "In 2017 I created a Proof of Concept of an idea I had to help students get started exploring Machine Learning. I used Python/Django and Angular 2. The full code source is on my Github and a mocked version is available on https://joeffison.github.io/MachineLearningBuilder/.",
+  "#portfolio-instagram-utility": "Website built with Angular 2 to provide some features not officially offered by Instagram. https://joeffison.github.io/Joeffison/",
+  "#portfolio-academic-research": "During my Research, our team at SPLab created the \"RealTime PCO\" tool (to run tests in Embedded Real-Time Sysytems) which led to our paper \"Automating Test Case Creation and Execution for Embedded Real-time Systems\" describing our proposed process to test critical systems with time constraints highly important (e.g., systems in airplaines)."
+}

@@ -36,8 +36,8 @@ div.background-image {
 
   .photo-credits {
     position: absolute;
-    bottom: 1vw;
-    right: 1vw;
+    bottom: 1px;
+    right: 1px;
   }
 }
 </style>

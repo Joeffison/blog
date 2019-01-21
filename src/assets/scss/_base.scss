@@ -33,3 +33,12 @@ li {
   font-size: 4em;
   color: darken($primary, 10);
 }
+
+.app-clearfix {
+  zoom: 1;
+  clear: both;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

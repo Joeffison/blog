@@ -46,7 +46,7 @@ export default {
         git: this.experienceConstructor('git', 'fab fa-git', 2015),
         angular: this.experienceConstructor('Angular/AngularJS', 'fab fa-angular', 2015),
         spark: this.experienceConstructor('Spark', 'fas fa-feather', 2017),
-        databricks: this.experienceConstructor('Databricks', 'fas fa-pie-chart', 2017),
+        databricks: this.experienceConstructor('Databricks', 'fas fa-chart-pie', 2017),
         tableau: this.experienceConstructor('Tableau', 'fas fa-plus', 2017),
         aws: this.experienceConstructor('AWS', 'fab fa-aws', 2017),
         r: this.experienceConstructor('R', 'fas fa-chart-area', 2017),

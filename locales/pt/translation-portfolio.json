@@ -1,0 +1,6 @@
+{
+  "#portfolio-this-website": "Este site foi criado do zero, com VueJs e Bootstrap 4. Para a lista completa de tecnologias que eu usei, acesse a página TechStack.",
+  "#portfolio-coding-challenges": "As minhas soluções mais recentes para desafios de programação (em sua maioria em C ou Python) estão no meu repositório do Github https://github.com/Joeffison/",
+  "#portfolio-ml-builder": "Em 2017, eu construi uma \"Prova de Conceito\" de uma ideia que tive para ajudar estudantes no início de suas explorações em Machine Learning. Para tal, eu usei Python/Django e Angular 2. Todo o código fonte está no meu Github e uma versão (mock) está disponível em https://joeffison.github.io/MachineLearningBuilder/.",
+  "#portfolio-instagram-utility": "Website criado com Angular 2 para fornecer algumas ferramentas ainda não disponíveis oficialmente pelo Instragram."
+}

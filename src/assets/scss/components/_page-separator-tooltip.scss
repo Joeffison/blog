@@ -1,0 +1,94 @@
+#component-page-separator {
+  .app-fullwidth {
+    background-repeat: no-repeat;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    .app-layout-column {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .app-fullwidth-bar {
+    background-color: #a0ce4e;
+    background-position: left top;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-color: #eae9e9;
+    border-top-style: solid;
+    border-bottom-style: solid;
+  }
+
+  .app-fullwidth-candy {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-position: center center;
+    background-color: rgba(255,255,255,0);
+  }
+
+  .app-section-separator .divider-candy-arrow.bottom {
+    border-width: 29px 29px 0 29px;
+  }
+
+  .app-section-separator .divider-candy-arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: 2;
+    margin-left: -29px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #a0ce4e;
+  }
+
+  .app-section-separator .divider-candy.bottom {
+    bottom: -21px;
+
+    @include prefix((
+      transform: rotate(-45deg)
+    ))
+  }
+
+  .app-section-separator .divider-candy {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: -21px;
+    z-index: 100;
+    margin-left: -20px;
+    border-bottom: 1px solid #a0ce4e;
+    border-left: 1px solid #a0ce4e;
+    background-color: transparent;
+  }
+
+  .app-section-separator {
+    position: relative;
+    margin-left: -30px;
+    margin-right: -30px;
+    border-bottom: 1px solid #a0ce4e;
+  }
+
+  .app-column-wrapper {
+    padding: 0px 0px 0px 0px;
+    background-position: left top;
+    background-repeat: no-repeat;
+
+    @include prefix((
+      background-size: cover
+    ))
+  }
+}
