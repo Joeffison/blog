@@ -1,0 +1,141 @@
+@function color-diff($a, $b) {
+  $sat: saturation($a) - saturation($b);
+  $lig: lightness($a) - lightness($b);
+  $fn-sat: if($sat > 0, 'desaturate', 'saturate');
+  $fn-lig: if($lig > 0, 'darken', 'lighten');
+
+  @return (
+    adjust-hue: -(hue($a) - hue($b)),
+    #{$fn-sat}: abs($sat),
+    #{$fn-lig}: abs($lig)
+  );
+}
+
+@function change_color($new_color, $old_color, $base_color) {
+  $color_diff: color-diff($base_color, $old_color);
+
+  $response: $new_color;
+  @each $fn-name, $fn-value in $color_diff {
+    $response:  call(get-function($fn-name), $response, $fn-value)
+  }
+
+  @return (
+    $response
+  );
+}
+
+.ribbon {
+  $proportion: .75;
+  $ribbon-color: $tertiary;
+
+  width: calc(25rem * #{$proportion});
+  height: calc(3.75rem * #{$proportion});
+  margin: 5px auto;
+  position: relative;
+  color: #fff;
+  font: 1rem/calc(3.75rem * #{$proportion}) sans-serif;
+  text-align: center;
+  background: $ribbon-color; // #3D79D0
+
+  @include prefix((
+    animation: ribbon-main 250ms
+  ));
+
+  i {
+    position: absolute;
+  }
+
+  i:first-child, i:nth-child(2) {
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+    z-index: -1;
+    border: 20px solid transparent;
+    border-right-color: darken($ribbon-color, 30); // #043140;
+
+    @include prefix((
+      animation: ribbon-edge 500ms
+    ));
+  }
+
+  i:nth-child(2) {
+    left: auto;
+    right: -20px;
+    border-right-color: transparent;
+    border-left-color: darken($ribbon-color, 30);
+  }
+
+  i:nth-child(3), i:last-child {
+    box-sizing: content-box !important;
+    width: 20px;
+    bottom: -20px;
+    left: calc(-3.75rem * #{$proportion});
+    z-index: -2;
+    border: calc(30px * #{$proportion}) solid change_color($ribbon-color, #1D53C0, #3D79D0); // #1D53C0
+    border-left-color: transparent;
+
+    @include prefix((
+      animation: ribbon-back 600ms,
+      transform-origin: 100% 0
+    ));
+  }
+
+  i:last-child {
+    bottom: -20px;
+    left: auto;
+    right: calc(-3.75rem * #{$proportion}); // position of right back
+    border: calc(30px * #{$proportion}) solid change_color($ribbon-color, #1D53C0, #3D79D0); // size of right back
+    border-right-color: transparent;
+
+    @include prefix((
+      transform-origin: 0 0
+    ));
+  }
+}
+
+/* ribbon's animations */
+
+@-webkit-keyframes ribbon-main {
+  0% { -webkit-transform: scaleX(0); }
+  100% { -webkit-transform: scaleX(1); }
+}
+
+@-webkit-keyframes ribbon-edge {
+  0%, 50% { -webkit-transform: scaleY(0); }
+  100% { -webkit-transform: scaleY(1); }
+}
+
+@-webkit-keyframes ribbon-back {
+  0%, 75% { -webkit-transform: scaleX(0); }
+  100% { -webkit-transform: scaleX(1); }
+}
+
+@-moz-keyframes ribbon-main {
+  0% { -moz-transform: scaleX(0); }
+  100% { -moz-transform: scaleX(1); }
+}
+
+@-moz-keyframes ribbon-edge {
+  0%, 50% { -moz-transform: scaleY(0); }
+  100% { -moz-transform: scaleY(1); }
+}
+
+@-moz-keyframes ribbon-back {
+  0%, 75% { -moz-transform: scaleX(0); }
+  100% { -moz-transform: scaleX(1); }
+}
+
+@keyframes ribbon-main {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes ribbon-edge {
+  0%, 50% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes ribbon-back {
+  0%, 75% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}

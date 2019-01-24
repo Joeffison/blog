@@ -1,0 +1,38 @@
+footer {
+  margin-bottom: 3px;
+}
+
+.icon-holder {
+  $size: 2rem;
+
+  text-decoration: none;
+  font-size: $size/2;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: $size;
+  width: $size;
+  height: $size;
+  text-align: center;
+  vertical-align: bottom;
+  max-width: 100%;
+  margin-right: 1px;
+
+  &:hover {
+    color: white;
+    background-color: $tertiary;
+  }
+}
+
+.icon-holder:last-of-type {
+  margin-right: 0;
+}
+
+.app-card {
+  padding: 15px 15px;
+
+  .card {
+    height: 100%;
+  }
+}

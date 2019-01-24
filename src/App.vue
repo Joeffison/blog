@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <app-nav-bar></app-nav-bar>
-    <router-view/>
+    <main><router-view/></main>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import { changeLanguage } from '@/config/i18n'
+
 import AppNavBar from '@/components/Navbar'
+import AppFooter from '@/components/Footer'
 
 export default {
   name: 'App',
-  components: { AppNavBar },
+  components: { AppNavBar, AppFooter },
   methods: {
     onRouting () {
       if (this.$route.params.lang) {
