@@ -6,6 +6,7 @@ import Blog from '@/views/Blog'
 import BlogPost from '@/views/BlogPost'
 import Library from '@/views/Library'
 import TechStack from '@/views/TechStack'
+import WorkExperience from '@/views/WorkExperience'
 
 import { changeLanguage } from './i18n'
 
@@ -40,6 +41,11 @@ export default new Router({
           path: '',
           name: 'home',
           component: Home
+        },
+        {
+          path: 'work-experience',
+          name: 'work-experience',
+          component: WorkExperience
         },
         {
           path: 'library',

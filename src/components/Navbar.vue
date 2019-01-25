@@ -7,6 +7,7 @@
       <b-navbar-brand :to="{name: 'home'}">Home</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
+          <b-nav-item :to="{name: 'work-experience'}">Work Experience</b-nav-item>
           <b-nav-item :to="{name: 'library'}">Library</b-nav-item>
           <b-nav-item :to="{name: 'tech-stack'}">TechStack</b-nav-item>
           <b-nav-item :to="{name: 'blog'}">Blog</b-nav-item>
