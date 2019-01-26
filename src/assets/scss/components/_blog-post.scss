@@ -1,0 +1,10 @@
+#view-blog-post {
+  article.blog-post-content {
+    text-align: justify;
+    margin-top: 3rem;
+
+    ul, li {
+      list-style: circle !important;
+    }
+  }
+}

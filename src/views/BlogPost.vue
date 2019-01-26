@@ -3,8 +3,7 @@
     <article class="app-content-container">
       <h1>{{ post.data.title }}</h1>
 
-      <h4 v-if="!post.err">{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
-      <div v-html="post.data.body"></div>
+      <article class="blog-post-content" v-html="post.data.body"></article>
 
       <router-link
         v-if="post.meta.previous_post"
