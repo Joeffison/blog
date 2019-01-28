@@ -1,10 +1,16 @@
 #view-blog-post {
   article.blog-post-content {
     text-align: justify;
-    margin-top: 3rem;
+    width: fit-content;
+    margin: 3rem auto 0;
 
     ul, li {
       list-style: circle !important;
     }
+  }
+
+  .blog-post-buttons {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }

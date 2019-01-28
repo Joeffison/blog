@@ -13,10 +13,11 @@
       <section>
         <p>{{ $t('Other Technologies I have experience with') }}:</p>
 
-        <ul class="dev-icons center">
-          <li class="center" v-for="(experience, key) in professionalExperience" :key="key">
+        <ul class="dev-icons center row">
+          <li class="center col-sm-6 col-md-4 col-lg-3"
+              v-for="(experience, key) in professionalExperience" :key="key">
             <p>
-              <i :class="experience.icon" :title="experience.name"></i>
+              <i :class="experience.icon" :title="experience.name" :alt="experience.name"></i>
               {{experience.name}}: {{$t('since')}} {{experience.since}}
             </p>
           </li>

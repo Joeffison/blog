@@ -5,21 +5,23 @@
 
       <article class="blog-post-content" v-html="post.data.body"></article>
 
-      <router-link
-        v-if="post.meta.previous_post"
-        :to="{ params: {slug: post.meta.previous_post.slug} }"
-        class="btn btn-primary"
-      >
-        {{ $t('Previous') }}: {{ post.meta.previous_post.title }}
-      </router-link>
+      <div class="blog-post-buttons">
+        <router-link
+          v-if="post.meta.previous_post"
+          :to="{ params: {slug: post.meta.previous_post.slug} }"
+          class="btn btn-primary"
+        >
+          {{ $t('Previous') }}: {{ post.meta.previous_post.title }}
+        </router-link>
 
-      <router-link
-        v-if="post.meta.next_post"
-        :to="{ params: {slug: post.meta.next_post.slug} }"
-        class="btn btn-secondary"
-      >
-        {{ $t('Next') }}: {{ post.meta.next_post.title }}
-      </router-link>
+        <router-link
+          v-if="post.meta.next_post"
+          :to="{ params: {slug: post.meta.next_post.slug} }"
+          class="btn btn-secondary"
+        >
+          {{ $t('Next') }}: {{ post.meta.next_post.title }}
+        </router-link>
+      </div>
     </article>
   </div>
 </template>
