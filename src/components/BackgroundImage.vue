@@ -1,7 +1,7 @@
 <template>
   <div
     id="component-background-image"
-    class="background-image"
+    :class="backgroundClass"
     :style="'background-image: url(' + imageSrc + ');'"
   >
    <photo-credits v-if="imageAuthor" :author="imageAuthor" :author-username="imageAuthorUsername">
@@ -29,6 +29,22 @@ export default {
       type: String,
       required: false,
       default: () => ''
+    },
+    imagePosition: {
+      type: String,
+      required: false,
+      default: () => 'center'
+    }
+  },
+  computed: {
+    backgroundClass: function () {
+      let defaultClass = 'background-image'
+
+      if (this.imagePosition.toLowerCase() === 'top') {
+        return defaultClass + ' background-image-top'
+      }
+
+      return defaultClass
     }
   }
 }
@@ -44,6 +60,10 @@ div.background-image {
   background-position-x: right;
   background-position-y: center;
   position: relative;
+
+  &.background-image-top {
+    background-position-y: top;
+  }
 
   .photo-credits {
     position: absolute;

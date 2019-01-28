@@ -7,10 +7,11 @@
       <b-navbar-brand :to="{name: 'home'}">Home</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <b-nav-item :to="{name: 'work-experience'}">Work Experience</b-nav-item>
-          <b-nav-item :to="{name: 'library'}">Library</b-nav-item>
-          <b-nav-item :to="{name: 'tech-stack'}">TechStack</b-nav-item>
-          <b-nav-item :to="{name: 'blog'}">Blog</b-nav-item>
+          <b-nav-item :to="{name: 'work-experience'}">{{$t('Work Experience')}}</b-nav-item>
+          <b-nav-item :to="{name: 'academic-experience'}">{{$t('Academic Experience')}}</b-nav-item>
+          <b-nav-item :to="{name: 'library'}">{{$t('Library')}}</b-nav-item>
+          <b-nav-item :to="{name: 'tech-stack'}">{{$t('TechStack')}}</b-nav-item>
+          <b-nav-item :to="{name: 'blog'}">{{$t('Blog')}}</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown :text="$t('Language')" right>

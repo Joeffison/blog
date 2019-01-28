@@ -2,7 +2,7 @@
   <article id="view-work-experience">
     <section class="app-content-container">
       <h1>
-        Work Experience
+        {{$t('Work Experience')}}
       </h1>
     </section>
 
@@ -136,10 +136,10 @@
           </section>
 
           <section>
-            <h3>Presentations, Publications and Awards:</h3>
+            <h3>Presentations:</h3>
             <ul>
               <li>
-                [Presentation] Databricks: Real Use Cases. HP Spark Day, Porto Alegre, September 2017.
+                Databricks: Real Use Cases. HP Spark Day, Porto Alegre, September 2017.
               </li>
             </ul>
           </section>
@@ -170,10 +170,6 @@ export default {
     text-align: -moz-left;
     text-align: -webkit-left;
     text-align: justify;
-  }
-
-  a {
-    text-decoration: none;
   }
 
   section li {

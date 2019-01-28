@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/views/Home'
+import AcademicExperience from '@/views/AcademicExperience'
 import Blog from '@/views/Blog'
 import BlogPost from '@/views/BlogPost'
 import Library from '@/views/Library'
@@ -46,6 +47,11 @@ export default new Router({
           path: 'work-experience',
           name: 'work-experience',
           component: WorkExperience
+        },
+        {
+          path: 'academic-experience',
+          name: 'academic-experience',
+          component: AcademicExperience
         },
         {
           path: 'library',
