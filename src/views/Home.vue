@@ -1,6 +1,9 @@
 <template>
   <div id="view-home">
-    <background-image :image-src="'static/images/large/background/homepage.jpg'">
+    <background-image
+      :image-src="'static/images/large/background/homepage.jpg'"
+      image-author="Ferdinand Stöhr"
+      image-author-username="fellowferdi">
     </background-image>
 
     <article class="app-content-container">

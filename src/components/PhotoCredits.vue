@@ -1,7 +1,7 @@
 <template>
   <article id="photo-credits" class="photo-credits">
     <a class="photo-credits-badge"
-       href="https://unsplash.com/@fellowferdi?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+       :href="profileUrl"
        target="_blank"
        rel="noopener noreferrer"
        :title="'Download free do whatever you want high-resolution photos from ' + author">
@@ -24,6 +24,17 @@ export default {
       type: String,
       required: false,
       default: () => ''
+    },
+    authorUsername: {
+      type: String,
+      required: false,
+      default: () => ''
+    }
+  },
+  computed: {
+    profileUrl: function () {
+      return 'https://unsplash.com/@' + this.authorUsername +
+        '?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge'
     }
   }
 }

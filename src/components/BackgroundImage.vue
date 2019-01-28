@@ -4,7 +4,8 @@
     class="background-image"
     :style="'background-image: url(' + imageSrc + ');'"
   >
-    <photo-credits author="Ferdinand Stöhr"></photo-credits>
+   <photo-credits v-if="imageAuthor" :author="imageAuthor" :author-username="imageAuthorUsername">
+   </photo-credits>
   </div>
 </template>
 
@@ -18,6 +19,16 @@ export default {
     imageSrc: {
       type: String,
       required: true
+    },
+    imageAuthor: {
+      type: String,
+      required: false,
+      default: () => ''
+    },
+    imageAuthorUsername: {
+      type: String,
+      required: false,
+      default: () => ''
     }
   }
 }
