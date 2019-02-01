@@ -1,0 +1,38 @@
+#books-in-my-life {
+  p {
+    margin: 0;
+    text-align: justify;
+  }
+
+  $app-dropcap-box-size: 50px;
+  $app-dropcap-box-padding: 10px;
+
+  p.app-dropcap:first-letter {
+    text-transform: uppercase;
+    font-family: 'Parisienne', 'Mrs Saint Delafield', sans-serif;
+    font-size: 330%;
+    font-weight: bold;
+    line-height: 90%;
+    float:left;
+    color: darken($tertiary, 20);
+    display:block;
+    margin-right: 4px;
+    margin-top: 0;
+    margin-bottom: -2px;
+  }
+
+  p.dropcap-boxed:first-letter {
+    padding: $app-dropcap-box-padding;
+    line-height: calc(#{$app-dropcap-box-size} - #{$app-dropcap-box-padding} * 2);
+    @include border-radius(8px);
+    @include prefix((
+      background-clip: padding-box,
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .2)
+    ));
+
+    background-color: $tertiary;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+  }
+}
