@@ -40,10 +40,11 @@
           </p>
         </section>
         <ul id="book-list">
-          <li class="row justify-content-md-center">
+          <li class="row row-eq-height book-referrer"
+              v-for="book in myBooks" :key="book.intro">
             <div class="col-md-auto float-left">
               <iframe
-                src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=joeffison-21&marketplace=amazon&region=DE&placement=B004WLDGVS&asins=B004WLDGVS&linkId=0e61c740ba5b1f76930adc9b6839a75e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066C0&bg_color=FFFFFF"
+                :src="book.urlEBook"
                 style="width:120px;height:240px;"
                 marginwidth="0"
                 marginheight="0"
@@ -51,11 +52,7 @@
                 frameborder="0">
               </iframe>
             </div>
-            <p class="col-md float-right">
-              The Picture of Dorian Gray is my all time favorite. <br>
-              The best of all, Amazon offers it <strong>100% free</strong> in ebook edition
-              (you can even read in any smartphone).
-            </p>
+            <p class="col-md float-right align-self-center" v-html="book.intro"></p>
           </li>
         </ul>
       </article>
@@ -65,7 +62,29 @@
 
 <script>
 export default {
-  name: 'Library'
+  name: 'Library',
+  data () {
+    return {
+      myp: 'this is my string\nwith new lines\n:)',
+      myBooks: [
+        {
+          intro: 'The Picture of Dorian Gray is my all time favorite. <br />' +
+            'The best of all, Amazon offers it 100% free in ebook edition <br />' +
+            '(you can even choose to read it on your browser or in the free kindle app).',
+          urlEBook: '//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=joeffison-21&marketplace=amazon&region=DE&placement=B004WLDGVS&asins=B004WLDGVS&linkId=0e61c740ba5b1f76930adc9b6839a75e&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066C0&bg_color=FFFFFF'
+        },
+        {
+          intro: 'Alberto Caeiro is my favorite of Fernando Pessoa\'s heteronyms. <br />' +
+            'Several publishers collects his poems to publish as books and "The Keeper of Sheep"' +
+            'collection - which is his most impressive work - is almost always included. ' +
+            'My favorite poem - "My gaze is clear as a sunflower" - talks very intimately to me. ' +
+            'If you read this poem in particular, you will understand how I take life. <br />' +
+            'On this offer, you can download my favorite poem for free. <br />',
+          urlEBook: '//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=joeffison-21&marketplace=amazon&region=DE&placement=B00AFYTAF2&asins=B00AFYTAF2&linkId=a79a3ab2cb1c512a288a190a619be485&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -90,5 +109,13 @@ export default {
 #book-list {
   margin-top: 1rem !important;
   text-align: justify;
+
+  p.multi-line {
+    white-space: pre;
+  }
+
+  .book-referrer {
+    margin-bottom: 1em;
+  }
 }
 </style>
