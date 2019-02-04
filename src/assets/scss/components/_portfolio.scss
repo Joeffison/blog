@@ -1,5 +1,38 @@
-.portfolio-tab-item.active,
-.portfolio-tab-item:hover {
+// vertical and horizontal centering for text in tab-content-card
+.portfolio-tab-component {
+  align-items: center;
+
+  // compensating padding between two cols (tabs and tab-content)
+  .portfolio-tab-content {
+    padding-right: 15px;
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 15px;
+    }
+  }
+}
+
+// fix the issue when the screen is not wide enough to fit the tabs + tab-content
+.portfolio-tab-component {
+  .portfolio-tab-content {
+    min-width: 1em !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .portfolio-tab-nav {
+      width: 100% !important;
+    }
+  }
+}
+
+.portfolio-tab-nav-li.active,
+.portfolio-tab-nav-li:hover {
+  box-shadow: 0 0 15px 0 hsla(0, 0%, 50.6%, .82) !important;
+  z-index: 1;
+}
+
+.portfolio-tab-nav-li-content.active,
+.portfolio-tab-nav-li-content:hover {
   border-right: 5px solid transparent !important;
   border-right-color: $primary !important;
   background: #fff !important;
@@ -8,16 +41,9 @@
   z-index: 1;
 }
 
-.portfolio-li.active,
-.portfolio-li:hover {
-  box-shadow: 0 0 15px 0 hsla(0, 0%, 50.6%, .82) !important;
-  z-index: 1;
-}
-
-.portfolio-tab-item {
+.portfolio-tab-nav-li-content {
   transition: background-color .2s, border-color .2s, box-shadow .2s;
   border-right: 5px solid transparent;
   background: #fff !important;
   color: $primary !important;
 }
-
