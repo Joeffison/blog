@@ -25,15 +25,15 @@
 }
 
 .ribbon {
-  $proportion: .75;
+  $proportion: .66; // best fit for iPhone X which still looks nice in laptops
   $ribbon-color: $tertiary;
 
   width: calc(25rem * #{$proportion});
   height: calc(3.75rem * #{$proportion});
-  margin: 5px auto;
+  margin: 10px auto;
   position: relative;
   color: #fff;
-  font: 1rem/calc(3.75rem * #{$proportion}) sans-serif;
+  font: 0.9rem/calc(3.75rem * #{$proportion}) sans-serif;
   text-align: center;
   background: $ribbon-color; // #3D79D0
 

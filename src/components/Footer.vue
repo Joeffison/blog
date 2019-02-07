@@ -12,10 +12,10 @@
     <app-ribbon
       :main-text="'© ' + new Date().getFullYear() + ' Joeffison Silvério de Andrade'">
     </app-ribbon>
-    <div v-if="$route.name === 'blog' || $route.name === 'blog-post'">
+    <div v-if="$route.name === 'blog' || $route.name === 'blog-post'" style="margin-top: -13px;">
       <span style="font-size: 0.75em;">Blog powered by: </span>
       <a href="https://buttercms.com" target="_blank">
-        <img style="max-width: 121.5px;" src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH">
+        <img style="max-width: 100px;" src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH">
       </a>
     </div>
   </footer>
