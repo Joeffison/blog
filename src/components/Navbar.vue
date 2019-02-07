@@ -6,7 +6,7 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand :to="{name: 'home'}">Home</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav>
+        <b-navbar-nav class="align-items-center">
           <b-nav-item :to="{name: 'work-experience'}">{{$t('Work Experience')}}</b-nav-item>
           <b-nav-item :to="{name: 'academic-experience'}">{{$t('Academic Experience')}}</b-nav-item>
           <b-nav-item :to="{name: 'library'}">{{$t('Library')}}</b-nav-item>
