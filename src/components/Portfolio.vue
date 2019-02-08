@@ -1,6 +1,6 @@
 <template>
   <div id="component-portfolio">
-    <page-separator-tooltip></page-separator-tooltip>
+    <page-separator-tooltip :separator-text="$t('Check out my Portfolio') + '!'"></page-separator-tooltip>
     <article class="app-content-container">
       <b-card no-body>
         <b-tabs pills cards vertical v-model="tabIndex"

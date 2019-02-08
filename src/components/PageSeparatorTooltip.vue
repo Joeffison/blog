@@ -4,7 +4,7 @@
       <div class="app-layout-column">
         <div class="app-column-wrapper">
           <div class="app-text">
-            <h2>Check out my Portfolio!</h2>
+            <h2 v-text="separatorText"></h2>
           </div>
           <div class="app-clearfix"></div>
         </div>
@@ -26,7 +26,14 @@
 
 <script>
 export default {
-  name: 'PageSeparatorTooltip'
+  name: 'PageSeparatorTooltip',
+  props: {
+    separatorText: {
+      type: String,
+      required: false,
+      default: () => ''
+    }
+  }
 }
 </script>
 
