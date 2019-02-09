@@ -1,5 +1,5 @@
 <template>
-  <div id="component-page-separator">
+  <div id="component-page-separator" :class="separatorClass">
     <div class="app-fullwidth app-fullwidth-bar">
       <div class="app-layout-column">
         <div class="app-column-wrapper">
@@ -29,6 +29,11 @@ export default {
   name: 'PageSeparatorTooltip',
   props: {
     separatorText: {
+      type: String,
+      required: false,
+      default: () => ''
+    },
+    separatorClass: {
       type: String,
       required: false,
       default: () => ''
