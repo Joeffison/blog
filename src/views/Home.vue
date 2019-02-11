@@ -12,6 +12,7 @@
 
     <app-bio></app-bio>
     <app-portfolio></app-portfolio>
+    <data-visualization></data-visualization>
   </div>
 </template>
 
@@ -19,10 +20,16 @@
 import BackgroundImage from '@/components/BackgroundImage'
 import AppBio from '@/components/Bio'
 import AppPortfolio from '@/components/Portfolio'
+import DataVisualization from '@/views/sections/DataVisualization'
 
 export default {
   name: 'Home',
-  components: { BackgroundImage, AppBio, AppPortfolio }
+  components: {
+    BackgroundImage,
+    AppBio,
+    AppPortfolio,
+    DataVisualization
+  }
 }
 </script>
 

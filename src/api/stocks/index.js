@@ -3,15 +3,21 @@ import alphaVantageMock from './alphaVantageMock'
 
 const stockApi = process.env.NODE_ENV === 'development' ? alphaVantageMock : alphaVantageApi
 
-function serializeStockData (data) {
-  let serializedData = _fillGaps(_sortDataPoints(_serializeStockResponse(data)))
+function serializeStockDailyData (data) {
+  let serializedData = data['Time Series (Daily)']
+  serializedData = _serializeStockResponse(serializedData)
+  serializedData = _sortDataPoints(serializedData)
+  serializedData = _fillGaps(serializedData)
 
-  return {
+  let response = {
     data: serializedData,
-    metadata: {
-      growth: _getGrowth(serializedData[0].prices, serializedData[serializedData.length - 1].prices)
-    }
+    metadata: _serializeMetrics(data['Meta Data'])
   }
+
+  response.metadata.growth = _getGrowth(serializedData[0].prices,
+    serializedData[serializedData.length - 1].prices)
+
+  return response
 }
 
 function _serializeStockResponse (data) {
@@ -35,6 +41,17 @@ function _serializePriceMetrics (prices) {
   }
 
   return serializedPrice
+}
+
+function _serializeMetrics (data) {
+  let serialized = {}
+
+  for (let [metric, value] of Object.entries(data)) {
+    let serializedMetric = metric.toLowerCase().split(' ').slice(1).join('_')
+    serialized[serializedMetric] = value
+  }
+
+  return serialized
 }
 
 function _sortDataPoints (serializedStockPrice) {
@@ -63,5 +80,5 @@ function _getGrowth (basePrices, newPrices) {
 
 export default function (stock) {
   return stockApi.get(stock)
-    .then(response => serializeStockData(response.data['Time Series (Daily)']))
+    .then(response => serializeStockDailyData(response.data))
 }
