@@ -1,6 +1,8 @@
 <template>
   <div id="section-data-visualization">
-    <page-separator-tooltip separator-class="bg-secondary" :separator-text="$t('Data Science') + '!'"></page-separator-tooltip>
+    <page-separator-tooltip
+      separator-class="bg-secondary"
+      :separator-text="$t('Data Science') + '!'" />
     <article class="app-content-container">
       <p>
         {{$t('#data-visualization-intro')}}
