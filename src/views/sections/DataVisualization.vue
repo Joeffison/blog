@@ -2,11 +2,10 @@
   <div id="section-data-visualization">
     <page-separator-tooltip
       separator-class="bg-secondary"
-      :separator-text="$t('Data Science') + '!'" />
+      :separator-text="$t('Data Science') + '!'"
+      :separator-sub-text="$t('#data-visualization-intro')"
+    />
     <article class="app-content-container">
-      <p>
-        {{$t('#data-visualization-intro')}}
-      </p>
       <div class="row">
         <div class="col-md-6" v-for="(plot, index) in plotSettings" :key="index">
           <vue-plotly
@@ -55,6 +54,14 @@ export default {
       let lineColor = stocksResponse.metadata.growth.close >= 0 ? '#00bcd4' : '#e91e63'
 
       let layout = {
+        margin: {
+          l: 24,
+          r: 24,
+          b: 24,
+          t: 24,
+          pad: 5
+        },
+        title: false,
         annotations: [
           {
             xref: 'paper',
@@ -92,12 +99,14 @@ export default {
         data: [{
           x: closingPrices.timestamp,
           y: closingPrices.price,
+          name: stocksResponse.metadata.symbol,
           type: 'scatter',
           mode: 'lines',
           line: {
             color: lineColor, // '#3182BC'
             width: 4
           },
+          connectgaps: true,
           showlegend: false
         },
         {
@@ -109,6 +118,7 @@ export default {
             color: lineColor,
             size: 12
           },
+          hoverinfo: 'skip',
           showlegend: false
         }],
         layout: layout,

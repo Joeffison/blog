@@ -12,9 +12,13 @@ li {
   list-style: none;
 }
 
-.app-content-container {
+.app-content-container, .app-container {
   width: 80vw;
   max-width: 80vw;
+  margin: auto;
+}
+
+.app-content-container {
   margin: 60px auto 1rem auto;
 
   img {

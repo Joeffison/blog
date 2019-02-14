@@ -6,8 +6,8 @@ const stockApi = process.env.NODE_ENV === 'development' ? alphaVantageMock : alp
 function serializeStockDailyData (data) {
   let serializedData = data['Time Series (Daily)']
   serializedData = _serializeStockResponse(serializedData)
+  serializedData = _removeZeroValues(serializedData)
   serializedData = _sortDataPoints(serializedData)
-  serializedData = _fillGaps(serializedData)
 
   let response = {
     data: serializedData,
@@ -58,14 +58,8 @@ function _sortDataPoints (serializedStockPrice) {
   return serializedStockPrice.sort((a, b) => a.timestamp.localeCompare(b.timestamp))
 }
 
-function _fillGaps (serializedStockPrice) {
-  for (let i = 1; i < serializedStockPrice.length; i++) {
-    if (serializedStockPrice[i].prices.close === 0) {
-      serializedStockPrice[i].prices = serializedStockPrice[i - 1].prices
-    }
-  }
-
-  return serializedStockPrice
+function _removeZeroValues (serializedStockPrices) {
+  return serializedStockPrices.filter(datapoint => datapoint.prices.close > 0)
 }
 
 function _getGrowth (basePrices, newPrices) {

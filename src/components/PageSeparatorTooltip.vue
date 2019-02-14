@@ -3,8 +3,16 @@
     <div class="app-fullwidth app-fullwidth-bar">
       <div class="app-layout-column">
         <div class="app-column-wrapper">
-          <div class="app-text">
+          <div class="app-container">
             <h2 v-text="separatorText"></h2>
+          </div>
+          <div class="app-clearfix"></div>
+        </div>
+      </div>
+      <div class="app-layout-column" v-if="separatorSubText">
+        <div class="app-column-wrapper">
+          <div class="app-container">
+            <p v-text="separatorSubText"></p>
           </div>
           <div class="app-clearfix"></div>
         </div>
@@ -29,6 +37,11 @@ export default {
   name: 'PageSeparatorTooltip',
   props: {
     separatorText: {
+      type: String,
+      required: false,
+      default: () => ''
+    },
+    separatorSubText: {
       type: String,
       required: false,
       default: () => ''
