@@ -97,8 +97,75 @@ function getLineChartSettings (stocksResponse) {
   }
 }
 
+function getCandlestickSettings (stocksResponse) {
+  let chartData = stockResponse2chartData(stocksResponse)
+
+  let data = [{
+    x: chartData.timestamp,
+    close: chartData.close,
+    high: chartData.high,
+    low: chartData.low,
+    open: chartData.open,
+    connectgaps: true,
+
+    // cutomise colors
+    increasing: {line: {color: positiveColor}},
+    decreasing: {line: {color: negativeColor}},
+
+    type: 'candlestick',
+    xaxis: 'x',
+    yaxis: 'y'
+  }]
+
+  let layout = {
+    margin: {
+      l: 35,
+      r: 35,
+      b: 35,
+      t: 35,
+      pad: 5
+    },
+    dragmode: 'zoom',
+    showlegend: false,
+    xaxis: {
+      autorange: true,
+      title: 'Date',
+      rangeselector: {
+        x: 0,
+        y: 1.2,
+        xanchor: 'left',
+        font: {size: 8},
+        buttons: [{
+          step: 'month',
+          stepmode: 'backward',
+          count: 1,
+          label: '1 month'
+        }, {
+          step: 'month',
+          stepmode: 'backward',
+          count: 6,
+          label: '6 months'
+        }, {
+          step: 'all',
+          label: 'All dates'
+        }]
+      }
+    },
+    yaxis: {
+      autorange: true
+    }
+  }
+
+  return {
+    data: data,
+    layout: layout,
+    options: options
+  }
+}
+
 const service = {
-  getLineChartSettings: getLineChartSettings
+  getLineChartSettings: getLineChartSettings,
+  getCandlestickSettings: getCandlestickSettings
 }
 
 export default service
