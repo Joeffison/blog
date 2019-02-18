@@ -50,7 +50,7 @@
         </p>
       </section>
       <section class="row row-eq-height">
-        <div class="col-xl-8">
+        <div class="col-xl-9">
           <ul>
             <li>
               01/2012 - 06/2013 Tutor for "Theory of Computation" classes
@@ -94,9 +94,12 @@
             </li>
           </ul>
         </div>
-        <div class="col-xl-4">
-          <img id="img-old-flisol-2015" src="static/images/large/background/team_flisol_2015.jpg">
-        </div>
+        <lazy-load-image thumbnail class="col-xl-3 m-auto"
+          id="img-old-flisol-2015"
+          image-src="static/images/large/background/team_flisol_2015.jpg"
+          blank-height="307"
+          blank-width="307">
+        </lazy-load-image>
       </section>
 
       <section>
@@ -157,11 +160,11 @@
 </template>
 
 <script>
-import BackgroundImage from '@/components/BackgroundImage'
+import LazyLoadImage from '../components/LazyLoadImage'
 
 export default {
   name: 'AcademicExperience',
-  components: { BackgroundImage }
+  components: { LazyLoadImage }
 }
 </script>
 
